@@ -4,30 +4,27 @@ import java.util.Scanner;
 
 public class MyPolynomial {
 	
+	//This is a comment
+	
 	private double[] coeffs;
 	
 	public MyPolynomial(double...coeffs) {
 		this.coeffs = coeffs;
 	}
 	public MyPolynomial (String filename) {
-	        Scanner in = null;
-	        try {
-	            in = new Scanner (new File(filename));
+		Scanner in = null;
+		try {
+	    in = new Scanner (new File(filename));
 	        } catch (FileNotFoundException e) {
 	            e.printStackTrace();
 	        }
 	        int degree = in.nextInt();
 	        coeffs = new double[degree+1];
-	        for (int i = 0; i< coeffs.length; i++) {
+	        	for (int i = 0; i< coeffs.length; i++) {
 	            coeffs [i] = in.nextDouble();
-	        }
-	    }
-	    public int getDegree () {
-	        return getDegree();
-	    }
+	        	}
 	}
-
-
+	
 	@Override
 	public String toString() {
 		
@@ -83,6 +80,6 @@ public class MyPolynomial {
 
 	private int getDegree() {
 		
-		return 0;
+		return coeffs.length -1;
 	}
 }
